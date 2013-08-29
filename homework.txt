@@ -1,0 +1,8 @@
+1 foot == 12 inches
+1 yard == 3 feet
+1 furlong == 660 fee or 220 yards
+1 mile == 5280 feet
+1 league == 3 miles
+1 fathom == 1853.184 feet
+1 nautical mile == 10 cables
+1 cable == 100 fathoms
