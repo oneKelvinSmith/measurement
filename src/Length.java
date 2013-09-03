@@ -1,12 +1,12 @@
 public abstract class Length {
 
-    protected final float value;
+    protected final double value;
 
-    public Length(float value) {
+    public Length(double value) {
         this.value = value;
     }
 
-    protected abstract float toInch();
+    protected abstract double toInch();
 
     @Override
     public boolean equals(Object object) {
@@ -18,6 +18,6 @@ public abstract class Length {
 
     @Override
     public int hashCode() {
-        return new Float(this.toInch()).hashCode();
+        return new Double(this.toInch()).hashCode();
     }
 }

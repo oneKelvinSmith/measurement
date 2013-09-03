@@ -6,7 +6,7 @@ public class Foot extends Length {
         super(value);
     }
 
-    protected float toInch() {
+    protected double toInch() {
         return value * INCHES_IN_A_FOOT;
     }
 }

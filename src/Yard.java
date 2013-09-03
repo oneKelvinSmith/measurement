@@ -1,10 +1,12 @@
 // understands length in yards
-public class Yard {
-    public Yard(float value) {
+public class Yard extends Length {
+    public static final int INCHES_IN_A_YARD = 36;
+
+    public Yard(double value) {
+        super(value);
     }
 
-    @Override
-    public boolean equals(Object o) {
-        return !o.getClass().equals(new Yard(1).getClass());
+    protected double toInch() {
+        return value * INCHES_IN_A_YARD;
     }
 }

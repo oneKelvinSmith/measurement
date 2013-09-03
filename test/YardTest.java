@@ -17,4 +17,9 @@ public class YardTest {
     public void shouldKnowThatTwoYardsAreEqualToSeventyTwoInches() throws Exception {
         assertTrue(new Yard(2).equals(new Inch(72)));
     }
+
+    @Test
+    public void shouldKnowThatAYardIsNotEqualToAnythingOtherThanLength() throws Exception {
+        assertFalse(new Yard(5).equals(new Object()));
+    }
 }

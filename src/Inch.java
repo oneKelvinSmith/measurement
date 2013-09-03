@@ -1,10 +1,10 @@
 public class Inch extends Length {
-    public Inch(float value) {
+    public Inch(double value) {
         super(value);
     }
 
     @Override
-    protected float toInch() {
+    protected double toInch() {
         return value;
     }
 }
