@@ -9,6 +9,11 @@ public class FurlongTest {
     }
 
     @Test
+    public void shouldKnowThatAFurlongIsEqualToHundredAndTenFathoms() throws Exception {
+        assertTrue(new Furlong(1).equals(new Fathom(110)));
+    }
+
+    @Test
     public void shouldKnowThatTwoFurlongsWithDifferentValuesAreNotEqual() throws Exception {
         assertFalse(new Furlong(7).equals(new Furlong(7920)));
     }
