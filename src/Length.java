@@ -1,23 +1,25 @@
-public abstract class Length {
+//understands length as a unit of measure for distance
+public class Length {
+    private final double quantity;
+    private final LengthUnit unit;
 
-    protected final double value;
-
-    public Length(double value) {
-        this.value = value;
+    public Length(double quantity, LengthUnit unit) {
+        this.quantity = quantity;
+        this.unit = unit;
     }
 
-    protected abstract double toInch();
-
     @Override
-    public boolean equals(Object object) {
-        if (!(object instanceof Length))
+    public boolean equals(Object other) {
+        if (!(other instanceof Length))
             return false;
-
-        return this.toInch() == ((Length) object).toInch();
+        Length anotherLength = (Length) other;
+        return unit.convertToBase(quantity)
+                == anotherLength.unit.convertToBase(anotherLength.quantity);
     }
 
     @Override
     public int hashCode() {
-        return new Double(this.toInch()).hashCode();
+        return new Double(quantity).hashCode();
     }
+
 }

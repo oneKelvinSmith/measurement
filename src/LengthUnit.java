@@ -1,19 +1,21 @@
-public enum LengthUnit {
+public enum LengthUnit implements Convertable {
     INCH(1),
     FOOT(12),
     YARD(36),
-    FATHOM(72),
     FURLONG(7920),
-    CABLE(8640),
     MILE(63360),
-    NAUTICAL_MILE(86400),
-    LEAGUE(190080);
+    LEAGUE(190080),
+    FATHOM(22238.208),
+    CABLE(2223820.8),
+    NAUTICAL_MILE(22238208);
 
-    private int value;
+    private double base;
 
-    private LengthUnit(int value) {
-        value = value;
+    LengthUnit(double base) {
+        this.base = base;
     }
 
-
+    public double convertToBase(double quantity) {
+        return base * quantity;
+    }
 }

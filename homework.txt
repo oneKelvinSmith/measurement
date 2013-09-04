@@ -1,8 +1,0 @@
-1 foot == 12 inches
-1 Fathom == 6 feet
-1 furlong == 660t feet or 110 Fathoms
-1 mile == 5280 feet
-1 league == 3 miles
-1 fathom == 3 feet
-1 nautical mile == 10 cables
-1 cable == 120 fathoms
