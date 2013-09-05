@@ -1,11 +1,25 @@
 // Understands imperial volume
 public class Volume {
 
-    public Volume(float value, VolumeUnit unit) {
+    private final float quantity;
+    private final VolumeUnit unit;
+
+    public Volume(float quantity, VolumeUnit unit) {
+        this.quantity = quantity;
+        this.unit = unit;
     }
 
     @Override
     public boolean equals(Object other) {
-        return true;
+        if (!(other instanceof Volume))
+            return false;
+        Volume anotherVolume = (Volume) other;
+        return unit.convertToBase(quantity)
+            == anotherVolume.unit.convertToBase(anotherVolume.quantity);
+    }
+
+    @Override
+    public int hashCode() {
+        return (int)unit.convertToBase(quantity);
     }
 }
