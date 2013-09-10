@@ -1,4 +1,4 @@
-// understands measurement of length and volume
+// understands quantity
 public class Measurement {
     private final double quantity;
     private final Unit unit;
@@ -12,8 +12,9 @@ public class Measurement {
         if (hasDifferentBaseUnit(other))
             throw new IncompatibleUnitsException();
 
-        double addedQuantityInBaseUnit = unit.quantityInBaseUnit(quantity) + other.unit.quantityInBaseUnit(other.quantity);
-        return new Measurement(addedQuantityInBaseUnit, unit.getBaseUnit());
+        double addedQuantityInBaseUnit = unit.quantityInBaseUnit(quantity)
+                + other.unit.quantityInBaseUnit(other.quantity);
+        return new Measurement(addedQuantityInBaseUnit, unit.baseUnit());
     }
 
     private boolean hasDifferentBaseUnit(Measurement other) {
@@ -33,7 +34,8 @@ public class Measurement {
 
     @Override
     public int hashCode() {
-        return new Double(unit.quantityInBaseUnit(quantity)).hashCode() * unit.name().hashCode();
+        return new Double(unit.quantityInBaseUnit(quantity)).hashCode()
+                * unit.baseUnit().hashCode();
     }
 
     @Override

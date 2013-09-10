@@ -1,2 +1,2 @@
-public class IncompatibleUnitsException extends Exception {
+public class IncompatibleUnitsException extends RuntimeException {
 }

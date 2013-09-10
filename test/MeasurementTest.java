@@ -130,11 +130,6 @@ public class MeasurementTest {
     }
 
     @Test
-    public void something() throws Exception {
-        assertNotEquals(new Measurement(1, Unit.INCH).hashCode(), new Measurement(1, Unit.TEASPOON));
-    }
-
-    @Test
     public void shouldKnowHowToAddTeaspoons() throws Exception {
         assertEquals(new Measurement(1, Unit.TEASPOON).add(new Measurement(2, Unit.TEASPOON)), new Measurement(3, Unit.TEASPOON));
     }
@@ -167,5 +162,10 @@ public class MeasurementTest {
     @Test
     public void shouldKnowATeaSpoonAndAnInchHasDifferentHashCode() throws Exception {
         assertNotEquals(new Measurement(1, Unit.INCH).hashCode(), new Measurement(1, Unit.TEASPOON).hashCode());
+    }
+
+    @Test
+    public void shouldHaveTheSameHashCode() throws Exception {
+        assertEquals(new Measurement(1, Unit.FOOT).hashCode(), new Measurement(12, Unit.INCH).hashCode());
     }
 }
